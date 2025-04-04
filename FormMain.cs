@@ -29,6 +29,7 @@ namespace ShortTermRentals
                 TextShade.WHITE
                );
 
+            ApplyTabAccessRules();
             // Hide certain TabPages when FormMain is loaded
             //materialTabControl1.TabPages.Remove(tabPageAnalysis); // Hide "Analysis" tab
             //materialTabControl1.TabPages.Remove(tabPageKPIs); // Hide "KPIs" tab
@@ -39,7 +40,7 @@ namespace ShortTermRentals
             // Optionally, show certain tabs at some later point
             // tabControl1.TabPages.Add(tabPageDataEntry); // Show it again later
 
-            
+
         }
 
         private void BTNLogout_Click(object sender, EventArgs e)
@@ -60,6 +61,52 @@ namespace ShortTermRentals
             }
         }
 
-   
+        private void ApplyTabAccessRules()
+        {
+            string role = Session.Privilege;
+
+            switch (role)
+            {
+                case "Admin":
+                    // Admin sees all tabs
+                    break;
+
+                case "Booking Specialist":
+                    // Hide admin-only tabs
+                    materialTabControl1.TabPages.Remove(tabPageAnalysis); // Hide "Analysis" tab
+                    materialTabControl1.TabPages.Remove(tabPageKPIs); // Hide "KPIs" tab
+                    materialTabControl1.TabPages.Remove(tabPageProperties); // Hide "Properties" tab
+                    materialTabControl1.TabPages.Remove(tabPageUsers); // Hide "Users" tab
+                    materialTabControl1.TabPages.Remove(tabPageDownload); // Hide "Download" tab
+                    break;
+
+                case "Viewer":
+                    // Only allow basic view access
+                    materialTabControl1.TabPages.Remove(tabPageHome);
+                    materialTabControl1.TabPages.Remove(tabPageDataEntry);
+                    materialTabControl1.TabPages.Remove(tabPageAnalysis);
+                    materialTabControl1.TabPages.Remove(tabPageKPIs);
+                    materialTabControl1.TabPages.Remove(tabPageManageData);
+                    materialTabControl1.TabPages.Remove(tabPageUsers);
+                    materialTabControl1.TabPages.Remove(tabPageProperties);
+                    materialTabControl1.TabPages.Remove(tabPageDownload);
+                    materialTabControl1.TabPages.Remove(tabPageLogout);
+                    break;
+
+                default:
+                    // Fallback (hide sensitive tabs)
+                    materialTabControl1.TabPages.Remove(tabPageHome);
+                    materialTabControl1.TabPages.Remove(tabPageDataEntry);
+                    materialTabControl1.TabPages.Remove(tabPageAnalysis);
+                    materialTabControl1.TabPages.Remove(tabPageKPIs);
+                    materialTabControl1.TabPages.Remove(tabPageManageData);
+                    materialTabControl1.TabPages.Remove(tabPageUsers);
+                    materialTabControl1.TabPages.Remove(tabPageProperties);
+                    materialTabControl1.TabPages.Remove(tabPageDownload);
+                    break;
+            }
+        }
+
+
     }
 }

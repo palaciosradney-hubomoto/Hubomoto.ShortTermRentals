@@ -117,6 +117,7 @@
             this.Name = "MaterialConfirmDialog";
             this.Padding = new System.Windows.Forms.Padding(3, 24, 3, 3);
             this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmation";
             this.ResumeLayout(false);
 

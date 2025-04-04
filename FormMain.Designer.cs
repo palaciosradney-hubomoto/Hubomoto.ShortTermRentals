@@ -139,7 +139,7 @@
             this.tabPageHome.Location = new System.Drawing.Point(4, 26);
             this.tabPageHome.Name = "tabPageHome";
             this.tabPageHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHome.Size = new System.Drawing.Size(953, 456);
+            this.tabPageHome.Size = new System.Drawing.Size(986, 456);
             this.tabPageHome.TabIndex = 0;
             this.tabPageHome.Text = "Home";
             // 
@@ -154,7 +154,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(947, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(980, 450);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // materialCard1
@@ -844,7 +844,7 @@
             this.tabPageManageData.ImageKey = "ManageData.png";
             this.tabPageManageData.Location = new System.Drawing.Point(4, 26);
             this.tabPageManageData.Name = "tabPageManageData";
-            this.tabPageManageData.Size = new System.Drawing.Size(953, 456);
+            this.tabPageManageData.Size = new System.Drawing.Size(986, 456);
             this.tabPageManageData.TabIndex = 4;
             this.tabPageManageData.Text = "Manage Data";
             // 
@@ -868,7 +868,7 @@
             this.tabPageAnalysis.ImageKey = "OccupancyRate.png";
             this.tabPageAnalysis.Location = new System.Drawing.Point(4, 26);
             this.tabPageAnalysis.Name = "tabPageAnalysis";
-            this.tabPageAnalysis.Size = new System.Drawing.Size(953, 456);
+            this.tabPageAnalysis.Size = new System.Drawing.Size(986, 456);
             this.tabPageAnalysis.TabIndex = 5;
             this.tabPageAnalysis.Text = "Analysis";
             // 
@@ -892,7 +892,7 @@
             this.tabPageKPIs.ImageKey = "KPIs.png";
             this.tabPageKPIs.Location = new System.Drawing.Point(4, 26);
             this.tabPageKPIs.Name = "tabPageKPIs";
-            this.tabPageKPIs.Size = new System.Drawing.Size(953, 456);
+            this.tabPageKPIs.Size = new System.Drawing.Size(986, 456);
             this.tabPageKPIs.TabIndex = 3;
             this.tabPageKPIs.Text = "KPIs";
             // 
@@ -916,7 +916,7 @@
             this.tabPageProperties.ImageKey = "Properties.png";
             this.tabPageProperties.Location = new System.Drawing.Point(4, 26);
             this.tabPageProperties.Name = "tabPageProperties";
-            this.tabPageProperties.Size = new System.Drawing.Size(953, 456);
+            this.tabPageProperties.Size = new System.Drawing.Size(986, 456);
             this.tabPageProperties.TabIndex = 6;
             this.tabPageProperties.Text = "Properties";
             // 
@@ -940,7 +940,7 @@
             this.tabPageUsers.ImageKey = "Users.png";
             this.tabPageUsers.Location = new System.Drawing.Point(4, 26);
             this.tabPageUsers.Name = "tabPageUsers";
-            this.tabPageUsers.Size = new System.Drawing.Size(953, 456);
+            this.tabPageUsers.Size = new System.Drawing.Size(986, 456);
             this.tabPageUsers.TabIndex = 7;
             this.tabPageUsers.Text = "Users";
             // 
@@ -964,7 +964,7 @@
             this.tabPageDownload.ImageKey = "Download.png";
             this.tabPageDownload.Location = new System.Drawing.Point(4, 26);
             this.tabPageDownload.Name = "tabPageDownload";
-            this.tabPageDownload.Size = new System.Drawing.Size(953, 456);
+            this.tabPageDownload.Size = new System.Drawing.Size(986, 456);
             this.tabPageDownload.TabIndex = 2;
             this.tabPageDownload.Text = "Download";
             // 
@@ -987,7 +987,7 @@
             this.tabPageLogout.ImageKey = "Logout.png";
             this.tabPageLogout.Location = new System.Drawing.Point(4, 26);
             this.tabPageLogout.Name = "tabPageLogout";
-            this.tabPageLogout.Size = new System.Drawing.Size(953, 456);
+            this.tabPageLogout.Size = new System.Drawing.Size(986, 456);
             this.tabPageLogout.TabIndex = 8;
             this.tabPageLogout.Text = "Logout";
             this.tabPageLogout.UseVisualStyleBackColor = true;
@@ -1042,6 +1042,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HUBOMOTO Short Term Rentals";
             this.materialTabControl1.ResumeLayout(false);
             this.tabPageHome.ResumeLayout(false);
