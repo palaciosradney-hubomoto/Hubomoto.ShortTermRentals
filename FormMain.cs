@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,10 @@ namespace ShortTermRentals
         public FormMain()
         {
             InitializeComponent();
-			var materialSkinManager = MaterialSkinManager.Instance;
+            
+            ControlUtils.SetDoubleBuffer(flowLayoutPanel1, true);
+
+            var materialSkinManager = MaterialSkinManager.Instance;
 			materialSkinManager.AddFormToManage(this);
 			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 			materialSkinManager.ColorScheme = new ColorScheme
@@ -30,15 +34,7 @@ namespace ShortTermRentals
                );
 
             ApplyTabAccessRules();
-            // Hide certain TabPages when FormMain is loaded
-            //materialTabControl1.TabPages.Remove(tabPageAnalysis); // Hide "Analysis" tab
-            //materialTabControl1.TabPages.Remove(tabPageKPIs); // Hide "KPIs" tab
-            //materialTabControl1.TabPages.Remove(tabPageProperties); // Hide "Properties" tab
-            //materialTabControl1.TabPages.Remove(tabPageUsers); // Hide "Users" tab
-            //materialTabControl1.TabPages.Remove(tabPageDownload); // Hide "Download" tab
-
-            // Optionally, show certain tabs at some later point
-            // tabControl1.TabPages.Add(tabPageDataEntry); // Show it again later
+           
 
 
         }

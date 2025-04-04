@@ -18,6 +18,7 @@ namespace ShortTermRentals
         public FormLogin()
         {
             InitializeComponent();
+
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -111,5 +112,6 @@ namespace ShortTermRentals
                 return false;
             }
         }
+
     }
 }

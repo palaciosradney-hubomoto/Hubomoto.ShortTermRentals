@@ -13,4 +13,5 @@ namespace ShortTermRentals
         public static string Privilege { get; set; }
     }
 
+
 }
