@@ -84,6 +84,7 @@
             this.tabPageLogout = new System.Windows.Forms.TabPage();
             this.BTNLogout = new MaterialSkin.Controls.MaterialButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPageHome.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -420,6 +421,7 @@
             // tabPageDataEntry
             // 
             this.tabPageDataEntry.BackColor = System.Drawing.Color.White;
+            this.tabPageDataEntry.Controls.Add(this.materialButton2);
             this.tabPageDataEntry.Controls.Add(this.TBBookedDateRangeTo);
             this.tabPageDataEntry.Controls.Add(this.DTPBookedDateRangeTo);
             this.tabPageDataEntry.Controls.Add(this.materialButton1);
@@ -1029,6 +1031,25 @@
             this.imageList1.Images.SetKeyName(8, "Users.png");
             this.imageList1.Images.SetKeyName(9, "Logout.png");
             // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(655, 411);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(158, 36);
+            this.materialButton2.TabIndex = 17;
+            this.materialButton2.Text = "materialButton2";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1058,6 +1079,7 @@
             this.materialCard5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPageDataEntry.ResumeLayout(false);
+            this.tabPageDataEntry.PerformLayout();
             this.tabPageManageData.ResumeLayout(false);
             this.tabPageManageData.PerformLayout();
             this.tabPageAnalysis.ResumeLayout(false);
@@ -1131,6 +1153,7 @@
         private System.Windows.Forms.DateTimePicker DTPBookedDateRangeFrom;
         private System.Windows.Forms.DateTimePicker DTPBookedDateRangeTo;
         private MaterialSkin.Controls.MaterialTextBox2 TBBookedDateRangeTo;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }
 

@@ -53,10 +53,10 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>327993A0ADC6078CF93603AA55E62B0689C30CCC</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>438BEA5C4EDBCD9F7CE7823EF9F88FEFEDDA1BA4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ShortTermRentals_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ShortTermRentals_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -184,6 +184,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ShortTermRentals_1_TemporaryKey.pfx" />
     <None Include="ShortTermRentals_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
