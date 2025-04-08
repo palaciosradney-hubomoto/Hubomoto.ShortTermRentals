@@ -65,6 +65,7 @@ namespace ShortTermRentals
             {
                 case "Admin":
                     // Admin sees all tabs
+                    this.Text = $"HUBOMOTO Short Term Rentals : {Session.FullName} [{role}]";
                     break;
 
                 case "Booking Specialist":
@@ -74,6 +75,7 @@ namespace ShortTermRentals
                     materialTabControl1.TabPages.Remove(tabPageProperties); // Hide "Properties" tab
                     materialTabControl1.TabPages.Remove(tabPageUsers); // Hide "Users" tab
                     materialTabControl1.TabPages.Remove(tabPageDownload); // Hide "Download" tab
+                    this.Text = $"HUBOMOTO Short Term Rentals : {Session.FullName} [{role}]";
                     break;
 
                 case "Viewer":
@@ -87,6 +89,7 @@ namespace ShortTermRentals
                     materialTabControl1.TabPages.Remove(tabPageProperties);
                     materialTabControl1.TabPages.Remove(tabPageDownload);
                     materialTabControl1.TabPages.Remove(tabPageLogout);
+                    this.Text = $"HUBOMOTO Short Term Rentals : {Session.FullName} [{role}]";
                     break;
 
                 default:
@@ -99,10 +102,14 @@ namespace ShortTermRentals
                     materialTabControl1.TabPages.Remove(tabPageUsers);
                     materialTabControl1.TabPages.Remove(tabPageProperties);
                     materialTabControl1.TabPages.Remove(tabPageDownload);
+                    this.Text = $"HUBOMOTO Short Term Rentals : {Session.FullName} [{role}]";
                     break;
             }
         }
 
-
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

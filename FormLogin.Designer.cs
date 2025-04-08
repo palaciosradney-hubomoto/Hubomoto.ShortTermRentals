@@ -36,8 +36,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.LBError = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CBShowPassword = new MaterialSkin.Controls.MaterialCheckbox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.PBLoading = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // TBUsername
@@ -51,7 +55,7 @@
             this.TBUsername.HideSelection = true;
             this.TBUsername.Hint = "Username";
             this.TBUsername.LeadingIcon = null;
-            this.TBUsername.Location = new System.Drawing.Point(27, 97);
+            this.TBUsername.Location = new System.Drawing.Point(27, 80);
             this.TBUsername.MaxLength = 32767;
             this.TBUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.TBUsername.Name = "TBUsername";
@@ -83,7 +87,7 @@
             this.TBPassword.HideSelection = true;
             this.TBPassword.Hint = "Password";
             this.TBPassword.LeadingIcon = null;
-            this.TBPassword.Location = new System.Drawing.Point(27, 155);
+            this.TBPassword.Location = new System.Drawing.Point(27, 138);
             this.TBPassword.MaxLength = 32767;
             this.TBPassword.MouseState = MaterialSkin.MouseState.OUT;
             this.TBPassword.Name = "TBPassword";
@@ -110,14 +114,15 @@
             this.BTNLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BTNLogin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.BTNLogin.Depth = 0;
+            this.BTNLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNLogin.HighEmphasis = true;
             this.BTNLogin.Icon = null;
-            this.BTNLogin.Location = new System.Drawing.Point(76, 216);
+            this.BTNLogin.Location = new System.Drawing.Point(76, 244);
             this.BTNLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BTNLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTNLogin.Name = "BTNLogin";
             this.BTNLogin.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BTNLogin.Size = new System.Drawing.Size(153, 39);
+            this.BTNLogin.Size = new System.Drawing.Size(153, 33);
             this.BTNLogin.TabIndex = 3;
             this.BTNLogin.Text = "LOGIN";
             this.BTNLogin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -137,6 +142,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.PBLoading);
+            this.panel2.Controls.Add(this.CBShowPassword);
             this.panel2.Controls.Add(this.LBError);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.TBUsername);
@@ -156,7 +163,7 @@
             this.LBError.Location = new System.Drawing.Point(6, 283);
             this.LBError.MouseState = MaterialSkin.MouseState.HOVER;
             this.LBError.Name = "LBError";
-            this.LBError.Size = new System.Drawing.Size(296, 53);
+            this.LBError.Size = new System.Drawing.Size(243, 53);
             this.LBError.TabIndex = 5;
             this.LBError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -169,6 +176,39 @@
             this.pictureBox1.Size = new System.Drawing.Size(250, 50);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // CBShowPassword
+            // 
+            this.CBShowPassword.AutoSize = true;
+            this.CBShowPassword.Depth = 0;
+            this.CBShowPassword.Location = new System.Drawing.Point(78, 193);
+            this.CBShowPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.CBShowPassword.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.CBShowPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CBShowPassword.Name = "CBShowPassword";
+            this.CBShowPassword.ReadOnly = false;
+            this.CBShowPassword.Ripple = true;
+            this.CBShowPassword.Size = new System.Drawing.Size(149, 37);
+            this.CBShowPassword.TabIndex = 6;
+            this.CBShowPassword.Text = "Show Password";
+            this.CBShowPassword.UseVisualStyleBackColor = true;
+            this.CBShowPassword.CheckedChanged += new System.EventHandler(this.CBShowPassword_CheckedChanged);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            // 
+            // PBLoading
+            // 
+            this.PBLoading.Image = ((System.Drawing.Image)(resources.GetObject("PBLoading.Image")));
+            this.PBLoading.Location = new System.Drawing.Point(255, 286);
+            this.PBLoading.Name = "PBLoading";
+            this.PBLoading.Size = new System.Drawing.Size(47, 50);
+            this.PBLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBLoading.TabIndex = 7;
+            this.PBLoading.TabStop = false;
+            this.PBLoading.Visible = false;
             // 
             // FormLogin
             // 
@@ -183,9 +223,12 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLogin_FormClosing);
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLoading)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +241,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel LBError;
+        private MaterialSkin.Controls.MaterialCheckbox CBShowPassword;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.PictureBox PBLoading;
     }
 }
