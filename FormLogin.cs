@@ -45,7 +45,7 @@ namespace ShortTermRentals
         private void BTNLogin_Click(object sender, EventArgs e)
         {
 
-            string username = TBUsername.Text;
+            string username = TBUsername.PrefixSuffixText + TBUsername.Text;
             string password = TBPassword.Text;
 
             // Show the "Signing in..." message

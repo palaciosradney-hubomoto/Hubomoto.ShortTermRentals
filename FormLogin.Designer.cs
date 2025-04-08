@@ -34,14 +34,14 @@
             this.BTNLogin = new MaterialSkin.Controls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PBLoading = new System.Windows.Forms.PictureBox();
+            this.CBShowPassword = new MaterialSkin.Controls.MaterialCheckbox();
             this.LBError = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CBShowPassword = new MaterialSkin.Controls.MaterialCheckbox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.PBLoading = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TBUsername
@@ -54,21 +54,21 @@
             this.TBUsername.HelperText = "Username";
             this.TBUsername.HideSelection = true;
             this.TBUsername.Hint = "Username";
-            this.TBUsername.LeadingIcon = null;
+            this.TBUsername.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("TBUsername.LeadingIcon")));
             this.TBUsername.Location = new System.Drawing.Point(27, 80);
             this.TBUsername.MaxLength = 32767;
             this.TBUsername.MouseState = MaterialSkin.MouseState.OUT;
             this.TBUsername.Name = "TBUsername";
             this.TBUsername.PasswordChar = '\0';
-            this.TBUsername.PrefixSuffixText = null;
+            this.TBUsername.PrefixSuffix = MaterialSkin.Controls.MaterialTextBox2.PrefixSuffixTypes.Prefix;
+            this.TBUsername.PrefixSuffixText = "HM-";
             this.TBUsername.ReadOnly = false;
             this.TBUsername.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TBUsername.SelectedText = "";
             this.TBUsername.SelectionLength = 0;
             this.TBUsername.SelectionStart = 0;
             this.TBUsername.ShortcutsEnabled = true;
-            this.TBUsername.ShowAssistiveText = true;
-            this.TBUsername.Size = new System.Drawing.Size(250, 52);
+            this.TBUsername.Size = new System.Drawing.Size(250, 36);
             this.TBUsername.TabIndex = 1;
             this.TBUsername.TabStop = false;
             this.TBUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -86,7 +86,7 @@
             this.TBPassword.HelperText = "Password";
             this.TBPassword.HideSelection = true;
             this.TBPassword.Hint = "Password";
-            this.TBPassword.LeadingIcon = null;
+            this.TBPassword.LeadingIcon = ((System.Drawing.Image)(resources.GetObject("TBPassword.LeadingIcon")));
             this.TBPassword.Location = new System.Drawing.Point(27, 138);
             this.TBPassword.MaxLength = 32767;
             this.TBPassword.MouseState = MaterialSkin.MouseState.OUT;
@@ -99,8 +99,7 @@
             this.TBPassword.SelectionLength = 0;
             this.TBPassword.SelectionStart = 0;
             this.TBPassword.ShortcutsEnabled = true;
-            this.TBPassword.ShowAssistiveText = true;
-            this.TBPassword.Size = new System.Drawing.Size(250, 52);
+            this.TBPassword.Size = new System.Drawing.Size(250, 36);
             this.TBPassword.TabIndex = 2;
             this.TBPassword.TabStop = false;
             this.TBPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -155,6 +154,34 @@
             this.panel2.Size = new System.Drawing.Size(305, 336);
             this.panel2.TabIndex = 5;
             // 
+            // PBLoading
+            // 
+            this.PBLoading.Image = ((System.Drawing.Image)(resources.GetObject("PBLoading.Image")));
+            this.PBLoading.Location = new System.Drawing.Point(255, 286);
+            this.PBLoading.Name = "PBLoading";
+            this.PBLoading.Size = new System.Drawing.Size(47, 50);
+            this.PBLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PBLoading.TabIndex = 7;
+            this.PBLoading.TabStop = false;
+            this.PBLoading.Visible = false;
+            // 
+            // CBShowPassword
+            // 
+            this.CBShowPassword.AutoSize = true;
+            this.CBShowPassword.Depth = 0;
+            this.CBShowPassword.Location = new System.Drawing.Point(78, 193);
+            this.CBShowPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.CBShowPassword.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.CBShowPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CBShowPassword.Name = "CBShowPassword";
+            this.CBShowPassword.ReadOnly = false;
+            this.CBShowPassword.Ripple = true;
+            this.CBShowPassword.Size = new System.Drawing.Size(149, 37);
+            this.CBShowPassword.TabIndex = 6;
+            this.CBShowPassword.Text = "Show Password";
+            this.CBShowPassword.UseVisualStyleBackColor = true;
+            this.CBShowPassword.CheckedChanged += new System.EventHandler(this.CBShowPassword_CheckedChanged);
+            // 
             // LBError
             // 
             this.LBError.Depth = 0;
@@ -177,38 +204,10 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // CBShowPassword
-            // 
-            this.CBShowPassword.AutoSize = true;
-            this.CBShowPassword.Depth = 0;
-            this.CBShowPassword.Location = new System.Drawing.Point(78, 193);
-            this.CBShowPassword.Margin = new System.Windows.Forms.Padding(0);
-            this.CBShowPassword.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.CBShowPassword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CBShowPassword.Name = "CBShowPassword";
-            this.CBShowPassword.ReadOnly = false;
-            this.CBShowPassword.Ripple = true;
-            this.CBShowPassword.Size = new System.Drawing.Size(149, 37);
-            this.CBShowPassword.TabIndex = 6;
-            this.CBShowPassword.Text = "Show Password";
-            this.CBShowPassword.UseVisualStyleBackColor = true;
-            this.CBShowPassword.CheckedChanged += new System.EventHandler(this.CBShowPassword_CheckedChanged);
-            // 
             // backgroundWorker1
             // 
             this.backgroundWorker1.WorkerReportsProgress = true;
             this.backgroundWorker1.WorkerSupportsCancellation = true;
-            // 
-            // PBLoading
-            // 
-            this.PBLoading.Image = ((System.Drawing.Image)(resources.GetObject("PBLoading.Image")));
-            this.PBLoading.Location = new System.Drawing.Point(255, 286);
-            this.PBLoading.Name = "PBLoading";
-            this.PBLoading.Size = new System.Drawing.Size(47, 50);
-            this.PBLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PBLoading.TabIndex = 7;
-            this.PBLoading.TabStop = false;
-            this.PBLoading.Visible = false;
             // 
             // FormLogin
             // 
@@ -227,8 +226,8 @@
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
