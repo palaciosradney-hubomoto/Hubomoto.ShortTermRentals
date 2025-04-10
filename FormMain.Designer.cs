@@ -1045,6 +1045,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HUBOMOTO Short Term Rentals";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPageHome.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);

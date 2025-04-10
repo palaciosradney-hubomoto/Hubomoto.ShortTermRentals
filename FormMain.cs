@@ -15,10 +15,11 @@ namespace ShortTermRentals
 {
     public partial class FormMain : MaterialForm
     {
+       
         public FormMain()
         {
             InitializeComponent();
-            
+
             ControlUtils.SetDoubleBuffer(flowLayoutPanel1, true);
 
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -34,9 +35,7 @@ namespace ShortTermRentals
                );
 
             ApplyTabAccessRules();
-           
-
-
+            
         }
 
         private void BTNLogout_Click(object sender, EventArgs e)
@@ -109,7 +108,28 @@ namespace ShortTermRentals
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Dispose();
+            // Ask for confirmation to close the application
+            MaterialConfirmDialog confirmDialog = new MaterialConfirmDialog("Are you sure you want to exit?");
+            confirmDialog.ShowDialog();  // Show the dialog as a modal window
+
+            // If the user clicks "Yes", exit the application
+            if (confirmDialog.IsConfirmed)
+            {
+                // This will be handled in FormClosed, for a smoother exit
+                e.Cancel = false;
+                this.Dispose();
+                FormLogin formLogin = new FormLogin();
+                formLogin.ShowDialog();
+            }
+            else
+            {
+                e.Cancel = true; // Cancel the form closing if the user chooses "No"
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
