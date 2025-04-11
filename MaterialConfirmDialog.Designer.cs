@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialConfirmDialog));
             this.materialLabelMessage = new MaterialSkin.Controls.MaterialLabel();
             this.BTNYes = new MaterialSkin.Controls.MaterialButton();
             this.BTNNo = new MaterialSkin.Controls.MaterialButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // materialLabelMessage
@@ -42,13 +40,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabelMessage.Depth = 0;
             this.materialLabelMessage.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelMessage.Location = new System.Drawing.Point(265, 34);
+            this.materialLabelMessage.Location = new System.Drawing.Point(6, 34);
             this.materialLabelMessage.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelMessage.Name = "materialLabelMessage";
             this.materialLabelMessage.Padding = new System.Windows.Forms.Padding(5);
-            this.materialLabelMessage.Size = new System.Drawing.Size(290, 230);
+            this.materialLabelMessage.Size = new System.Drawing.Size(286, 80);
             this.materialLabelMessage.TabIndex = 0;
             this.materialLabelMessage.Text = "materialLabel1";
+            this.materialLabelMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BTNYes
             // 
@@ -59,7 +58,7 @@
             this.BTNYes.Depth = 0;
             this.BTNYes.HighEmphasis = true;
             this.BTNYes.Icon = null;
-            this.BTNYes.Location = new System.Drawing.Point(267, 270);
+            this.BTNYes.Location = new System.Drawing.Point(5, 120);
             this.BTNYes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BTNYes.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTNYes.Name = "BTNYes";
@@ -81,7 +80,7 @@
             this.BTNNo.Depth = 0;
             this.BTNNo.HighEmphasis = true;
             this.BTNNo.Icon = null;
-            this.BTNNo.Location = new System.Drawing.Point(415, 270);
+            this.BTNNo.Location = new System.Drawing.Point(153, 120);
             this.BTNNo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BTNNo.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTNNo.Name = "BTNNo";
@@ -94,22 +93,11 @@
             this.BTNNo.UseVisualStyleBackColor = true;
             this.BTNNo.Click += new System.EventHandler(this.BTNNo_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(3, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 288);
-            this.panel1.TabIndex = 3;
-            // 
             // MaterialConfirmDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 315);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(299, 165);
             this.Controls.Add(this.BTNNo);
             this.Controls.Add(this.BTNYes);
             this.Controls.Add(this.materialLabelMessage);
@@ -128,6 +116,5 @@
         private MaterialSkin.Controls.MaterialLabel materialLabelMessage;
         private MaterialSkin.Controls.MaterialButton BTNYes;
         private MaterialSkin.Controls.MaterialButton BTNNo;
-        private System.Windows.Forms.Panel panel1;
     }
 }
