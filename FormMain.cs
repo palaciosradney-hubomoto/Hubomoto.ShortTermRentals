@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -346,6 +347,103 @@ namespace ShortTermRentals
             TBBookedDate.Clear();
             TBBookedDateRangeFrom.Clear();
             TBBookedDateRangeTo.Clear();
+        }
+
+        private void BTNAutoGenerateAndSave_Click(object sender, EventArgs e)
+        {
+            string code = Guid.NewGuid().ToString().Substring(0, 8).ToUpper(); // Random 8-char code
+           
+            using (MySqlConnection conn = new MySqlConnection(GetAvailableConnectionString()))
+            {
+                conn.Open();
+                string query = "INSERT INTO Vouchers (Code) VALUES (@code)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@code", code);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            LBVoucherStatus.Text = $"Voucher {code} created!";
+            LoadVouchers();
+        }
+
+        private void BTNRedeem_Click(object sender, EventArgs e)
+        {
+            string code = TBVoucherCode.Text.Trim();
+
+            using (MySqlConnection conn = new MySqlConnection(GetAvailableConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT `Is Used` FROM Vouchers WHERE Code = @code";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@code", code);
+                    var result = cmd.ExecuteScalar();
+                    if (result == null)
+                    {
+                        LBVoucherStatus.Text = "Voucher not found.";
+                    }
+                    else if ((bool)result)
+                    {
+                        LBVoucherStatus.Text = "Voucher already used.";
+                    }
+                    else
+                    {
+                        // Mark as used
+                        string update = "UPDATE Vouchers SET `Is Used` = 1 WHERE Code = @code";
+                        using (MySqlCommand updateCmd = new MySqlCommand(update, conn))
+                        {
+                            updateCmd.Parameters.AddWithValue("@code", code);
+                            updateCmd.ExecuteNonQuery();
+                        }
+                        LBVoucherStatus.Text = "Voucher redeemed!";
+                        LoadVouchers();
+                    }
+                }
+            }
+        }
+
+        private void BTNShowVouchers_Click(object sender, EventArgs e)
+        {
+            LoadVouchers();
+        }
+
+        private void LoadVouchers()
+        {
+            DGVVouchers.ReadOnly = true;
+            DGVVouchers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DGVVouchers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVVouchers.AllowUserToAddRows = false;
+            DGVVouchers.RowHeadersVisible = false;
+
+            using (MySqlConnection conn = new MySqlConnection(GetAvailableConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT `Code`, `Is Used`, `Created At` FROM Vouchers ORDER BY `Created At` DESC";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        DGVVouchers.DataSource = dt;
+
+                        foreach (DataGridViewRow row in DGVVouchers.Rows)
+                        {
+                            bool isUsed = Convert.ToBoolean(row.Cells["Is Used"].Value);
+                            row.DefaultCellStyle.BackColor = isUsed ? Color.LightGray : Color.LightGreen;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        private void tabPageVouchers_Click(object sender, EventArgs e)
+        {
+            LoadVouchers();
         }
     }
 }

@@ -45,6 +45,7 @@
             this.tabPageManageData = new System.Windows.Forms.TabPage();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPageDataEntry = new System.Windows.Forms.TabPage();
+            this.BTNClear = new MaterialSkin.Controls.MaterialButton();
             this.TBBookedDateRangeTo = new MaterialSkin.Controls.MaterialTextBox2();
             this.DTPBookedDateRangeTo = new System.Windows.Forms.DateTimePicker();
             this.BTNSubmit = new MaterialSkin.Controls.MaterialButton();
@@ -83,7 +84,16 @@
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.BTNClear = new MaterialSkin.Controls.MaterialButton();
+            this.tabPageVouchers = new System.Windows.Forms.TabPage();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.CMBFilterStatus = new MaterialSkin.Controls.MaterialComboBox();
+            this.DGVVouchers = new System.Windows.Forms.DataGridView();
+            this.BTNShowVouchers = new MaterialSkin.Controls.MaterialButton();
+            this.LBVoucherStatus = new MaterialSkin.Controls.MaterialLabel();
+            this.BTNRedeem = new MaterialSkin.Controls.MaterialButton();
+            this.TBVoucherCode = new MaterialSkin.Controls.MaterialTextBox2();
+            this.BTNAutoGenerateAndSave = new MaterialSkin.Controls.MaterialButton();
+            this.tabPageWifi = new System.Windows.Forms.TabPage();
             this.tabPageDownload.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
             this.tabPageProperties.SuspendLayout();
@@ -104,6 +114,8 @@
             this.materialCard5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.materialTabControl1.SuspendLayout();
+            this.tabPageVouchers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVouchers)).BeginInit();
             this.SuspendLayout();
             // 
             // BTNLogout
@@ -143,6 +155,9 @@
             this.imageList1.Images.SetKeyName(7, "Properties.png");
             this.imageList1.Images.SetKeyName(8, "Users.png");
             this.imageList1.Images.SetKeyName(9, "Logout.png");
+            this.imageList1.Images.SetKeyName(10, "Vouchers.png");
+            this.imageList1.Images.SetKeyName(11, "PrepaidWifi.png");
+            this.imageList1.Images.SetKeyName(12, "PrepaidWifiColored.png");
             // 
             // tabPageDownload
             // 
@@ -290,6 +305,7 @@
             // 
             // tabPageDataEntry
             // 
+            this.tabPageDataEntry.AutoScroll = true;
             this.tabPageDataEntry.BackColor = System.Drawing.Color.White;
             this.tabPageDataEntry.Controls.Add(this.BTNClear);
             this.tabPageDataEntry.Controls.Add(this.TBBookedDateRangeTo);
@@ -314,6 +330,28 @@
             this.tabPageDataEntry.Size = new System.Drawing.Size(986, 456);
             this.tabPageDataEntry.TabIndex = 1;
             this.tabPageDataEntry.Text = "Data Entry";
+            // 
+            // BTNClear
+            // 
+            this.BTNClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTNClear.AutoSize = false;
+            this.BTNClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTNClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTNClear.Depth = 0;
+            this.BTNClear.HighEmphasis = true;
+            this.BTNClear.Icon = null;
+            this.BTNClear.Location = new System.Drawing.Point(655, 406);
+            this.BTNClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTNClear.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNClear.Name = "BTNClear";
+            this.BTNClear.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTNClear.Size = new System.Drawing.Size(158, 41);
+            this.BTNClear.TabIndex = 17;
+            this.BTNClear.Text = "Clear";
+            this.BTNClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTNClear.UseAccentColor = false;
+            this.BTNClear.UseVisualStyleBackColor = true;
+            this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
             // 
             // TBBookedDateRangeTo
             // 
@@ -727,6 +765,7 @@
             this.tabPageHome.Size = new System.Drawing.Size(986, 456);
             this.tabPageHome.TabIndex = 0;
             this.tabPageHome.Text = "Home";
+            this.tabPageHome.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -1011,6 +1050,8 @@
             this.materialTabControl1.Controls.Add(this.tabPageKPIs);
             this.materialTabControl1.Controls.Add(this.tabPageProperties);
             this.materialTabControl1.Controls.Add(this.tabPageUsers);
+            this.materialTabControl1.Controls.Add(this.tabPageVouchers);
+            this.materialTabControl1.Controls.Add(this.tabPageWifi);
             this.materialTabControl1.Controls.Add(this.tabPageDownload);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1018,33 +1059,209 @@
             this.materialTabControl1.ImageList = this.imageList1;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(994, 486);
             this.materialTabControl1.TabIndex = 0;
             // 
-            // BTNClear
+            // tabPageVouchers
             // 
-            this.BTNClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTNClear.AutoSize = false;
-            this.BTNClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BTNClear.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BTNClear.Depth = 0;
-            this.BTNClear.HighEmphasis = true;
-            this.BTNClear.Icon = null;
-            this.BTNClear.Location = new System.Drawing.Point(655, 406);
-            this.BTNClear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BTNClear.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BTNClear.Name = "BTNClear";
-            this.BTNClear.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BTNClear.Size = new System.Drawing.Size(158, 41);
-            this.BTNClear.TabIndex = 17;
-            this.BTNClear.Text = "Clear";
-            this.BTNClear.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BTNClear.UseAccentColor = false;
-            this.BTNClear.UseVisualStyleBackColor = true;
-            this.BTNClear.Click += new System.EventHandler(this.BTNClear_Click);
+            this.tabPageVouchers.BackColor = System.Drawing.Color.White;
+            this.tabPageVouchers.Controls.Add(this.materialButton1);
+            this.tabPageVouchers.Controls.Add(this.CMBFilterStatus);
+            this.tabPageVouchers.Controls.Add(this.DGVVouchers);
+            this.tabPageVouchers.Controls.Add(this.BTNShowVouchers);
+            this.tabPageVouchers.Controls.Add(this.LBVoucherStatus);
+            this.tabPageVouchers.Controls.Add(this.BTNRedeem);
+            this.tabPageVouchers.Controls.Add(this.TBVoucherCode);
+            this.tabPageVouchers.Controls.Add(this.BTNAutoGenerateAndSave);
+            this.tabPageVouchers.ImageKey = "Vouchers.png";
+            this.tabPageVouchers.Location = new System.Drawing.Point(4, 26);
+            this.tabPageVouchers.Name = "tabPageVouchers";
+            this.tabPageVouchers.Size = new System.Drawing.Size(986, 456);
+            this.tabPageVouchers.TabIndex = 8;
+            this.tabPageVouchers.Text = "Vouchers";
+            this.tabPageVouchers.Click += new System.EventHandler(this.tabPageVouchers_Click);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(16, 339);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(250, 43);
+            this.materialButton1.TabIndex = 8;
+            this.materialButton1.Text = "Show / Reload Vouchers";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = false;
+            // 
+            // CMBFilterStatus
+            // 
+            this.CMBFilterStatus.AutoResize = false;
+            this.CMBFilterStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CMBFilterStatus.Depth = 0;
+            this.CMBFilterStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CMBFilterStatus.DropDownHeight = 174;
+            this.CMBFilterStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CMBFilterStatus.DropDownWidth = 121;
+            this.CMBFilterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CMBFilterStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CMBFilterStatus.FormattingEnabled = true;
+            this.CMBFilterStatus.IntegralHeight = false;
+            this.CMBFilterStatus.ItemHeight = 43;
+            this.CMBFilterStatus.Location = new System.Drawing.Point(16, 281);
+            this.CMBFilterStatus.MaxDropDownItems = 4;
+            this.CMBFilterStatus.MouseState = MaterialSkin.MouseState.OUT;
+            this.CMBFilterStatus.Name = "CMBFilterStatus";
+            this.CMBFilterStatus.Size = new System.Drawing.Size(250, 49);
+            this.CMBFilterStatus.StartIndex = 0;
+            this.CMBFilterStatus.TabIndex = 7;
+            // 
+            // DGVVouchers
+            // 
+            this.DGVVouchers.AllowUserToAddRows = false;
+            this.DGVVouchers.AllowUserToDeleteRows = false;
+            this.DGVVouchers.AllowUserToOrderColumns = true;
+            this.DGVVouchers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGVVouchers.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DGVVouchers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DGVVouchers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVVouchers.Location = new System.Drawing.Point(273, 13);
+            this.DGVVouchers.Name = "DGVVouchers";
+            this.DGVVouchers.ReadOnly = true;
+            this.DGVVouchers.Size = new System.Drawing.Size(701, 431);
+            this.DGVVouchers.TabIndex = 6;
+            // 
+            // BTNShowVouchers
+            // 
+            this.BTNShowVouchers.AutoSize = false;
+            this.BTNShowVouchers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTNShowVouchers.BackColor = System.Drawing.SystemColors.Control;
+            this.BTNShowVouchers.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTNShowVouchers.Depth = 0;
+            this.BTNShowVouchers.HighEmphasis = true;
+            this.BTNShowVouchers.Icon = null;
+            this.BTNShowVouchers.Location = new System.Drawing.Point(16, 184);
+            this.BTNShowVouchers.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTNShowVouchers.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNShowVouchers.Name = "BTNShowVouchers";
+            this.BTNShowVouchers.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTNShowVouchers.Size = new System.Drawing.Size(250, 43);
+            this.BTNShowVouchers.TabIndex = 5;
+            this.BTNShowVouchers.Text = "Show / Reload Vouchers";
+            this.BTNShowVouchers.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTNShowVouchers.UseAccentColor = false;
+            this.BTNShowVouchers.UseVisualStyleBackColor = false;
+            this.BTNShowVouchers.Click += new System.EventHandler(this.BTNShowVouchers_Click);
+            // 
+            // LBVoucherStatus
+            // 
+            this.LBVoucherStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LBVoucherStatus.Depth = 0;
+            this.LBVoucherStatus.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.LBVoucherStatus.Location = new System.Drawing.Point(13, 409);
+            this.LBVoucherStatus.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LBVoucherStatus.Name = "LBVoucherStatus";
+            this.LBVoucherStatus.Size = new System.Drawing.Size(253, 35);
+            this.LBVoucherStatus.TabIndex = 4;
+            this.LBVoucherStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BTNRedeem
+            // 
+            this.BTNRedeem.AutoSize = false;
+            this.BTNRedeem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTNRedeem.BackColor = System.Drawing.SystemColors.Control;
+            this.BTNRedeem.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTNRedeem.Depth = 0;
+            this.BTNRedeem.HighEmphasis = true;
+            this.BTNRedeem.Icon = null;
+            this.BTNRedeem.Location = new System.Drawing.Point(16, 129);
+            this.BTNRedeem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTNRedeem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNRedeem.Name = "BTNRedeem";
+            this.BTNRedeem.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTNRedeem.Size = new System.Drawing.Size(250, 43);
+            this.BTNRedeem.TabIndex = 2;
+            this.BTNRedeem.Text = "Redeem";
+            this.BTNRedeem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTNRedeem.UseAccentColor = false;
+            this.BTNRedeem.UseVisualStyleBackColor = false;
+            this.BTNRedeem.Click += new System.EventHandler(this.BTNRedeem_Click);
+            // 
+            // TBVoucherCode
+            // 
+            this.TBVoucherCode.AnimateReadOnly = false;
+            this.TBVoucherCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TBVoucherCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TBVoucherCode.Depth = 0;
+            this.TBVoucherCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TBVoucherCode.HelperText = "Code Search";
+            this.TBVoucherCode.HideSelection = true;
+            this.TBVoucherCode.Hint = "Code Search";
+            this.TBVoucherCode.LeadingIcon = null;
+            this.TBVoucherCode.Location = new System.Drawing.Point(16, 13);
+            this.TBVoucherCode.MaxLength = 32767;
+            this.TBVoucherCode.MouseState = MaterialSkin.MouseState.OUT;
+            this.TBVoucherCode.Name = "TBVoucherCode";
+            this.TBVoucherCode.PasswordChar = '\0';
+            this.TBVoucherCode.PrefixSuffixText = null;
+            this.TBVoucherCode.ReadOnly = false;
+            this.TBVoucherCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TBVoucherCode.SelectedText = "";
+            this.TBVoucherCode.SelectionLength = 0;
+            this.TBVoucherCode.SelectionStart = 0;
+            this.TBVoucherCode.ShortcutsEnabled = true;
+            this.TBVoucherCode.ShowAssistiveText = true;
+            this.TBVoucherCode.Size = new System.Drawing.Size(250, 52);
+            this.TBVoucherCode.TabIndex = 1;
+            this.TBVoucherCode.TabStop = false;
+            this.TBVoucherCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TBVoucherCode.TrailingIcon = null;
+            this.TBVoucherCode.UseSystemPasswordChar = false;
+            this.TBVoucherCode.UseTallSize = false;
+            // 
+            // BTNAutoGenerateAndSave
+            // 
+            this.BTNAutoGenerateAndSave.AutoSize = false;
+            this.BTNAutoGenerateAndSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTNAutoGenerateAndSave.BackColor = System.Drawing.SystemColors.Control;
+            this.BTNAutoGenerateAndSave.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTNAutoGenerateAndSave.Depth = 0;
+            this.BTNAutoGenerateAndSave.HighEmphasis = true;
+            this.BTNAutoGenerateAndSave.Icon = null;
+            this.BTNAutoGenerateAndSave.Location = new System.Drawing.Point(16, 74);
+            this.BTNAutoGenerateAndSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTNAutoGenerateAndSave.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTNAutoGenerateAndSave.Name = "BTNAutoGenerateAndSave";
+            this.BTNAutoGenerateAndSave.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTNAutoGenerateAndSave.Size = new System.Drawing.Size(250, 43);
+            this.BTNAutoGenerateAndSave.TabIndex = 0;
+            this.BTNAutoGenerateAndSave.Text = "Auto-generate and Save";
+            this.BTNAutoGenerateAndSave.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTNAutoGenerateAndSave.UseAccentColor = false;
+            this.BTNAutoGenerateAndSave.UseVisualStyleBackColor = false;
+            this.BTNAutoGenerateAndSave.Click += new System.EventHandler(this.BTNAutoGenerateAndSave_Click);
+            // 
+            // tabPageWifi
+            // 
+            this.tabPageWifi.ImageKey = "PrepaidWifi.png";
+            this.tabPageWifi.Location = new System.Drawing.Point(4, 26);
+            this.tabPageWifi.Name = "tabPageWifi";
+            this.tabPageWifi.Size = new System.Drawing.Size(986, 456);
+            this.tabPageWifi.TabIndex = 9;
+            this.tabPageWifi.Text = "WiFi";
+            this.tabPageWifi.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -1090,6 +1307,8 @@
             this.materialCard5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.materialTabControl1.ResumeLayout(false);
+            this.tabPageVouchers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVouchers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1149,6 +1368,16 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private MaterialSkin.Controls.MaterialButton BTNClear;
+        private System.Windows.Forms.TabPage tabPageVouchers;
+        private MaterialSkin.Controls.MaterialTextBox2 TBVoucherCode;
+        private MaterialSkin.Controls.MaterialButton BTNAutoGenerateAndSave;
+        private MaterialSkin.Controls.MaterialButton BTNRedeem;
+        private MaterialSkin.Controls.MaterialLabel LBVoucherStatus;
+        private MaterialSkin.Controls.MaterialButton BTNShowVouchers;
+        private System.Windows.Forms.DataGridView DGVVouchers;
+        private MaterialSkin.Controls.MaterialComboBox CMBFilterStatus;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.TabPage tabPageWifi;
     }
 }
 
