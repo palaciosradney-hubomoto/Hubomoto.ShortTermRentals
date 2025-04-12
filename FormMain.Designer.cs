@@ -94,6 +94,7 @@
             this.TBVoucherCode = new MaterialSkin.Controls.MaterialTextBox2();
             this.BTNAutoGenerateAndSave = new MaterialSkin.Controls.MaterialButton();
             this.tabPageWifi = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabPageDownload.SuspendLayout();
             this.tabPageUsers.SuspendLayout();
             this.tabPageProperties.SuspendLayout();
@@ -116,6 +117,7 @@
             this.materialTabControl1.SuspendLayout();
             this.tabPageVouchers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVouchers)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTNLogout
@@ -1057,7 +1059,7 @@
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialTabControl1.ImageList = this.imageList1;
-            this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 0);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
@@ -1263,13 +1265,24 @@
             this.tabPageWifi.Text = "WiFi";
             this.tabPageWifi.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.materialTabControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(994, 486);
+            this.panel1.TabIndex = 1;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1000, 553);
             this.Controls.Add(this.BTNLogout);
-            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.panel1);
             this.DrawerAutoShow = true;
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
@@ -1309,6 +1322,7 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPageVouchers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVVouchers)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1378,6 +1392,7 @@
         private MaterialSkin.Controls.MaterialComboBox CMBFilterStatus;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private System.Windows.Forms.TabPage tabPageWifi;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
